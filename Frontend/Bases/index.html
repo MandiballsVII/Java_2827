@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo HTML</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
     <link rel="stylesheet" href="../CSS/Estilos.css">
 </head>
 
@@ -18,10 +18,10 @@
 
 <body>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#summernote').summernote();
         });
-      </script>
+    </script>
     <header>
         <h1>Ejemplo HTML</h1>
 
@@ -48,8 +48,10 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure asperiores sunt quod alias a debitis
                     cum! Quo repudiandae quam architecto suscipit unde quis optio error amet laudantium, sed ipsam
                     aliquam?</p>
-                <p>Dicta, quam quod sint <span class="destacado">corrupti eligendi ullam, aspernatur error atque vel officia quia beatae
-                    quisquam? Ea dolores excepturi ab, aliquam, fugiat</span> temporibus consequatur laborum ducimus recusandae
+                <p>Dicta, quam quod sint <span class="destacado">corrupti eligendi ullam, aspernatur error atque vel
+                        officia quia beatae
+                        quisquam? Ea dolores excepturi ab, aliquam, fugiat</span> temporibus consequatur laborum ducimus
+                    recusandae
                     eveniet iusto cumque quae?</p>
                 <p>Impedit maiores <span>numquam ipsa corrupti</span> eaque rerum, eius explicabo atque totam deserunt,
                     quis molestiae. Beatae ipsam nesciunt facilis voluptas odio ratione, at temporibus asperiores autem
@@ -66,133 +68,195 @@
                     <li><a href="tel:633336477">Telefono</a></li>
                     <li><a href="#pagina2.html">Enlace relativo</a></li>
                 </ul>
-                
+
             </section>
 
             <section id="Listas">
-            <h3>Listas</h3>
-            <ol>
-                <li>Elemento 1</li>
-                <ul>
-                    <li>Subelemento 1</li>
-                    <li>Subelemento 2</li>
-                </ul>
-                <li>Elemento 2</li>
-                <li>Elemento 3</li>
-                <li>Elemento 4</li>
-            </ol>
-            <dl>
-                <dt>Elemento</dt>
-                <dd>Descripcion</dd>
-                <dt>Elemento</dt>
-                <dd>Descripcion</dd>
-                <dt>Elemento</dt>
-                <dd>Descripcion</dd>
-            </dl>
+                <h3>Listas</h3>
+                <ol>
+                    <li>Elemento 1</li>
+                    <ul>
+                        <li>Subelemento 1</li>
+                        <li>Subelemento 2</li>
+                    </ul>
+                    <li>Elemento 2</li>
+                    <li>Elemento 3</li>
+                    <li>Elemento 4</li>
+                </ol>
+                <dl>
+                    <dt>Elemento</dt>
+                    <dd>Descripcion</dd>
+                    <dt>Elemento</dt>
+                    <dd>Descripcion</dd>
+                    <dt>Elemento</dt>
+                    <dd>Descripcion</dd>
+                </dl>
             </section>
             <section id="Citas">
                 <h3>Citas</h3>
                 <blockquote cite="https://www.lipsum.com/">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure asperiores sunt quod alias a debitis
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure asperiores sunt quod alias a
+                        debitis
                         cum! Quo repudiandae quam architecto suscipit unde quis optio error amet laudantium, sed ipsam
                         aliquam?</p>
                 </blockquote>
-                <q cite="https://www.lipsum.com/">Dicta, quam quod sint corrupti eligendi ullam, aspernatur error atque vel officia quia beatae
+                <q cite="https://www.lipsum.com/">Dicta, quam quod sint corrupti eligendi ullam, aspernatur error atque
+                    vel officia quia beatae
                     quisquam? Ea dolores excepturi ab, aliquam, fugiat</q>
-            <section id="tablas">
-                <h3>Tablas</h3>
-                <table id="Ejemplo">
-                    <caption>Tabla de ejemplo</caption>
-                    <thead>Tabla</thead>
+                <section id="tablas">
+                    <h3>Tablas</h3>
+                    <table id="Ejemplo">
+                        <caption>Tabla de ejemplo</caption>
+                        <thead>Tabla</thead>
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Edad</th>
                         </tr>
-                    <tbody>
-                        <tr>
-                            <th>1</th>
-                            <td>Ramón</td>
-                            <td>Perez</td>
-                            <th>56</th>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>Esther</td>
-                            <td>Fernandez</td>
-                            <th>10</th>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Félix</td>
-                            <td>Lopez</td>
-                            <th>23</th>
-                        </tr>
-                        <tr>
-                            <th>TOTAL</th>
-                            <td></td>
-                            <td></td>
-                            <th>87</th>
-                        </tr>
-                    </tbody>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Ramón</td>
+                                <td>Perez</td>
+                                <th>56</th>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td>Esther</td>
+                                <td>Fernandez</td>
+                                <th>10</th>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td>Félix</td>
+                                <td>Lopez</td>
+                                <th>23</th>
+                            </tr>
+                            <tr>
+                                <th>TOTAL</th>
+                                <td></td>
+                                <td></td>
+                                <th>87</th>
+                            </tr>
+                        </tbody>
 
-                </table>
-            </section>
-            <section id="multimedia">
-                <h3>Multimedia</h3>
-                <img src="https://picsum.photos/300/200" alt="Foto ejemplo">
-                <video src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
-                <audio src="https://www.w3schools.com//html/horse.mp3" controls></audio>
-            </section>
-            <section id="iframes">
-                <h3>Iframes</h3>
-                <div class="proporcion p1x1">
-                    <iframe title="Mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11622.156286678752!2d-2.9439175128936657!3d43.26108111451466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e5025aac23623%3A0xd6e71e4bb27d8c9a!2sOFIPRIX%20Muebles%20de%20Oficina%20Bilbao!5e0!3m2!1ses!2ses!4v1737983579998!5m2!1ses!2ses" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="proporcion p16x9">
-                    <iframe title="Musica" width="100%" height="300" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1734884979&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/trending-music-ibe" title="Trending Music" target="_blank">Trending Music</a> · <a href="https://soundcloud.com/trending-music-ibe/sets/r-b" title="R&amp;B" target="_blank" style="color: #cccccc; text-decoration: none;">R&amp;B</a></div>
-                </div>
-            </section>
-
-            <section id="formularios">
-                <section id="formularios">
-                    <h3>Formulario</h3>
-                    <form action="/submit" method="post">
-                        <div>
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" required>
-                        </div>
-                        <div>
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div>
-                            <label for="password">Contraseña:</label>
-                            <input type="password" id="password" name="password" required>
-                        </div>
-                        <div>
-                            <label for="fecha">Fecha de Nacimiento:</label>
-                            <input type="date" id="fecha" name="fecha">
-                        </div>
-                        <div>
-                            <label for="genero">Género:</label>
-                            <select id="genero" name="genero">
-                                <option value="masculino">Masculino</option>
-                                <option value="femenino">Femenino</option>
-                                <option value="otro">Otro</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="comentarios">Comentarios:</label>
-                            <textarea id="summernote" name="editordata" name="comentarios"></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="botonEnviar">Enviar</button>
-                        </div>
-                    </form>
+                    </table>
                 </section>
-            </section>
+                <section id="multimedia">
+                    <h3>Multimedia</h3>
+                    <img src="https://picsum.photos/300/200" alt="Foto ejemplo">
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+                    <audio src="https://www.w3schools.com//html/horse.mp3" controls></audio>
+                </section>
+                <section id="iframes">
+                    <h3>Iframes</h3>
+                    <div class="proporcion p1x1">
+                        <iframe title="Mapa"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11622.156286678752!2d-2.9439175128936657!3d43.26108111451466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e5025aac23623%3A0xd6e71e4bb27d8c9a!2sOFIPRIX%20Muebles%20de%20Oficina%20Bilbao!5e0!3m2!1ses!2ses!4v1737983579998!5m2!1ses!2ses"
+                            width="600" height="450" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="proporcion p16x9">
+                        <iframe title="Musica" width="100%" height="300" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1734884979&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                        <div
+                            style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                            <a href="https://soundcloud.com/trending-music-ibe" title="Trending Music"
+                                target="_blank">Trending Music</a> · <a
+                                href="https://soundcloud.com/trending-music-ibe/sets/r-b" title="R&amp;B"
+                                target="_blank" style="color: #cccccc; text-decoration: none;">R&amp;B</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="formularios">
+                    <section id="formularios">
+                        <h3>Formulario</h3>
+                        <form action="/submit" method="post">
+                            <div>
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div>
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div>
+                                <label for="password">Contraseña:</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <div>
+                                <label for="fecha">Fecha de Nacimiento:</label>
+                                <input type="date" id="fecha" name="fecha">
+                            </div>
+                            <div>
+                                <label for="telefono">Telefono:</label>
+                                <input type="phone" id="telefono" name="telefono">
+                            </div>
+                            <div>
+                                <label for="genero">Género:</label>
+                                <select id="genero" name="genero">
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="rango">Selecciona un rango:</label>
+                                <input type="range" id="rango" name="rango" min="0" max="100" value="50">
+                            </div>
+                            <div>
+                                <label for="fecha_hora">Fecha y Hora:</label>
+                                <input type="datetime-local" id="fecha_hora" name="fecha_hora">
+                            </div>
+                            <div>
+                                <label for="fecha">Fecha de Nacimiento:</label>
+                                <input type="date" id="fecha" name="fecha">
+                            </div>
+                            <div>
+                                <label for="semana">Selecciona una semana:</label>
+                                <input type="week" id="semana" name="semana">
+                            </div>
+                            <div>
+                                <label for="hora">Selecciona una hora:</label>
+                                <input type="time" id="hora" name="hora">
+                            </div>
+                            <div>
+                                <label for="comentarios">Comentarios:</label>
+                                <textarea id="summernote" name="editordata" name="comentarios"></textarea>
+                            </div>
+                            <div id="checksContainer">
+                                <div class="checkboxContainer">
+                                    <label for="aceptar">Aceptar términos y condiciones:</label>
+                                    <input type="checkbox" id="aceptar" name="aceptar">
+                                </div>
+                                <div class="peliculasContainer">
+                                    <p>Elegir películas favoritas</p>
+                                    <label for="aceptarCeder">Solo en casa</label>
+                                    <input type="checkbox" id="aceptar" name="aceptar">
+                                    <label for="aceptarCeder">La Máscara</label>
+                                    <input type="checkbox" id="aceptar" name="aceptar">
+                                    <label for="aceptarCeder">Regreso al futuro</label>
+                                    <input type="checkbox" id="aceptar" name="aceptar">
+                                    <label for="aceptarCeder">Star wars</label>
+                                    <input type="checkbox" id="aceptar" name="aceptar">
+                                    <label for="aceptarCeder">Indiana Jones</label>
+                                    <input type="checkbox" id="aceptar" name="aceptar">
+                                </div>
+                                <div class="checkboxContainer">
+                                    <label for="aceptarCeder">Inclinación política</label>
+                                    <input type="radio" id="aceptar" name="aceptar">
+                                    <input type="radio" id="aceptar" name="aceptar">
+                                    <input type="radio" id="aceptar" name="aceptar">
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="botonEnviar">Enviar</button>
+                            </div>
+                        </form>
+                    </section>
+                </section>
         </article>
         <pre>public class HolaMundo{
                 public static void main(String[] args){
@@ -205,11 +269,11 @@
              |      |
              +------+   
         </pre>
-        
+
     </main>
 
     <aside>
-        <nav aria-label="Aside Menu", id="enlaces">
+        <nav aria-label="Aside Menu" , id="enlaces">
             <ul>
                 <li>
                     <div><a href="#">Enlace 1</a></div>

@@ -266,3 +266,38 @@ dd{
     }
     
 }
+#checksContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: flex-end; 
+    & input{
+        cursor: pointer;
+    }
+    
+}
+.checkboxContainer{ 
+    margin: var(--margen);
+    border: var(--borde);
+    width: 100%;
+    padding: var(--margen);
+}
+.peliculasContainer{
+    border: var(--borde);
+    & p{
+        display:inline;
+        width: 100%;
+        text-align: center;
+        margin: var(--margen);
+        font-weight: bold;
+        font-size: calc(var(--tamano-letra-menu) * 0.75);
+    }
+    & label, input{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin: var(--margen);
+    }
+    & * {
+        border: var(--borde);
+    }
+}
