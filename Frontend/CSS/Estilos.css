@@ -50,19 +50,19 @@ header{
         text-align: center;
     }
 }
-a {
+a:not(.note-editor) {
     color: var(--color-enlace-claro);
     text-decoration: none;
 
-    &:before{
+    &:before:not(.note-editor){
         content: '[';
        
     }
-    &:after{
+    &:after:not(.note-editor){
         content: ']';
     }
 
-    &:after, &:before{
+    &:after:not(.note-editor), &:before:not(.note-editor){
         visibility: hidden;
         color: var(--color-enlace);
     }
@@ -111,11 +111,43 @@ pre{
 
     scrollbar-width: thin;
 }
-img, audio, video, iframe{
+img, video, audio, iframe{
     border:0;
     width: 100%;
-    height: auto;
+    /*margin: var(--margen-grande) 0;*/
 }
+
+img, video, iframe{
+    border-radius: var(--redondeado);
+    border:var(--borde);
+}
+.proporcion{
+    position:relative;
+
+    /*Coge la proporción del ancho para darselo al alto, 
+    en este caso 16/9. Sirve para que los iFrame se agranden 
+    proporcionalmente al agrandar la pantalla*/
+    padding-bottom: calc(9/16 * 100%); 
+
+    & iframe{
+        position:absolute;
+        top: 0;
+        left:0;
+
+        width: 100%;
+        height: 100%;
+    }
+    &.p16x9{
+        padding-bottom: calc(9/16 * 100%);
+    }
+    &.p4x3{
+        padding-bottom: calc(3/4 * 100%);
+    }
+    &.p1x1{
+        padding-bottom: 100%;
+    }
+}
+
 h2, h3{
     &::before{
         content: '<';
@@ -152,6 +184,34 @@ td, th{
         text-align: end;
     }
 }
+fieldset, input, .botonEnviar{
+    border: var(--borde);
+    border-radius: var(--redondeado);
+    padding: var(--margen);
+    margin: var(--margen) 0;
+    width: 100%;
+}
+aside{
+    background-color: var(--color-secundario-claro);
+    border: var(--borde);
+    padding: var(--margen);
+    margin: var(--margen) 0, 0, 0;
+    & li{
+        text-align: center;
+    }
+}
+footer{
+    background-color: var(--color-oscuro);
+    color: var(--color-claro);
+    padding: var(--margen);
+    text-align: center;
+}
+
+/*RESETEO*/
+
+*{
+    box-sizing: border-box;
+}
 
 /*Etiquetas específicas*/
 .destacado{
@@ -176,4 +236,33 @@ dt{
 }
 dd{
     margin: 0 0 var(--margen-grande)
+}
+#multimedia>*, #iframes>*{
+    margin: var(--margen-grande) 0;
+    display: block;
+}
+
+#arriba{
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    & a{
+        background-color: var(--color-secundario-claro);
+        color: var(--color-oscuro);
+        padding: var(--margen);
+        border: var(--borde);
+        border-radius: var(--redondeado);
+        text-decoration: none;
+        display: block;
+        box-shadow:  0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+
+        &:hover{
+            background-color: var(--color-secundario);
+            text-decoration: none;
+        }
+        &::after, &::before{
+            content: '';
+        }
+    }
+    
 }
