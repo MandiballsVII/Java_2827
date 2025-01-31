@@ -1,7 +1,13 @@
 @charset "UTF-8";
 
 /*Tipos de letra*/
+/*
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Tektur:wght@400..900&display=swap');
+*/
+@import url('./Fonts.css');
+
+/*Iconos*/
+@import url('all.min.css');
 
 :root {
     --color-oscuro: #000000;
@@ -268,6 +274,18 @@ footer {
     color: var(--color-claro);
     padding: var(--margen);
     text-align: center;
+    & #redesSociales{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover{
+            color: var(--color-secundario-claro);
+        }
+        & li{
+            padding: var(--margen);
+            list-style: none;
+        }
+    }
 }
 
 /*RESETEO*/
@@ -317,13 +335,17 @@ dd {
     right: 10%;
 
     & a {
+        display:flex;
+        justify-content: center;
+        align-items: center;
         background-color: var(--color-secundario-claro);
         color: var(--color-oscuro);
         padding: var(--margen);
         border: var(--borde);
-        border-radius: var(--redondeado);
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
         text-decoration: none;
-        display: block;
         box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
 
         &:hover {
