@@ -109,6 +109,7 @@ a:not(.note-editor) {
     }
 }
 
+
 body>nav {
     background-color: var(--color-oscuro);
     color: var(--color-claro);
@@ -135,11 +136,11 @@ h5,
 h6 {
     color: var(--color-oscuro);
     font-family: var(--fuente_titulo);
+    width: 100%;
 }
 
 p {
     line-height: calc(1rem + var(--margen));
-    margin: var(--margen-grande, 0);
 }
 
 pre {
@@ -249,7 +250,7 @@ th {
 }
 
 fieldset,
-input,
+input:not([type="image"]),
 .botonEnviar {
     border: var(--borde);
     border-radius: var(--redondeado);
@@ -274,14 +275,17 @@ footer {
     color: var(--color-claro);
     padding: var(--margen);
     text-align: center;
-    & #redesSociales{
+
+    & #redesSociales {
         display: flex;
         justify-content: center;
         align-items: center;
-        &:hover{
+
+        &:hover {
             color: var(--color-secundario-claro);
         }
-        & li{
+
+        & li {
             padding: var(--margen);
             list-style: none;
         }
@@ -302,7 +306,7 @@ footer {
     text-transform: lowercase;
 }
 
-#enlaces {
+#enlacesMenu {
     ul {
         padding: 0;
     }
@@ -310,13 +314,12 @@ footer {
     li {
         margin: var(--margen);
         list-style: none;
-
     }
 }
 
 dt {
     font-weight: bold;
-    margin: var(--margen) 0;
+    margin:0 0 var(--margen);
 }
 
 dd {
@@ -335,7 +338,7 @@ dd {
     right: 10%;
 
     & a {
-        display:flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         background-color: var(--color-secundario-claro);
@@ -360,22 +363,54 @@ dd {
     }
 
 }
+form{
+    border: var(--borde);
+    border-radius: var(--redondeado);
+    padding: var(--margen);
+}
 
 #checksContainer {
     display: inline;
-
-    & label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    & p{
+        font-size: large;
         text-align: center;
-        cursor: pointer;
     }
-
     & input {
         cursor: pointer;
     }
-
+    & .peliculasContainer {
+        & p {
+            width: 100%;
+            text-align: center;
+            margin: var(--margen);
+            font-weight: bold;
+            font-size: calc(var(--tamano-letra-menu) * 0.75);
+        }
+    
+        & div {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin: var(--margen);
+    
+            & input {
+                margin: var(--margen);
+            }
+        }    
+    }
+}
+.radioButtonContainer{
+    & div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: var(--margen);
+    }
+    & label{
+        display:block;
+        font-size: calc(var(--tamano-letra-menu) * 0.75);
+        text-align: center;
+    }
+    
 }
 
 .checkboxContainer {
@@ -384,40 +419,392 @@ dd {
     padding: var(--margen);
 }
 
-.peliculasContainer {
-    & p {
-        display: inline;
-        width: 100%;
-        text-align: center;
+/*TABLET*/
+@media (min-width: 768px) {
+
+    body{
         margin: var(--margen);
-        font-weight: bold;
-        font-size: calc(var(--tamano-letra-menu) * 0.75);
     }
+    body>nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
 
-    & div {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        margin: var(--margen);
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
 
-        & input {
-            margin: var(--margen);
+        & a {
+            margin: 0 var(--margen--grande);
+            padding: var(--margen);
         }
     }
 
-    .radioButtonContainer {
+    #enlacesMenu {
+        width: 100%;
+
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+
+    section {
+        scroll-margin-top: 7rem;
+        width: 100%;
+    }
+
+    article {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+        width: auto;
+    }
 
-        & input {
-            cursor: pointer;
+    main {
+        padding: var(--margen--grande) calc(var(--margen-grande) * 2);
+    }
+
+    #parrafos {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: var(--margen);
+
+        &>*:not(h3) {
+            width: calc(50% - var(--margen) / 2);
+            padding: var(--margen);
         }
-        & * {
-            border: var(--borde);
-        }
-        & p{
-            font-size: calc(var(--tamano-letra-menu) * 0.75);
+
+        & pre {
+            &:first-of-type {
+                width: calc(75% - var(--margen) / 2);
+            }
+
+            &:last-of-type {
+                width: calc(25% - var(--margen) / 2);
+            }
         }
     }
+
+    #enlaces {
+        width: 30%;
+    }
+
+    #listas {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 70%;
+        gap: var(--margen);
+    }
+
+    #formularios {
+
+        & form {
+            margin: var(--margen);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 5%;
+            & div{
+                width: 45%;
+                border-radius: var(--redondeado);
+            }
+        }
+
+        
+        & #comentarios {
+            width: 100%;
+        }
+        & #checksContainer {
+            width: 100%;  
+            border: none; 
+            & .peliculasContainer{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                border: var(--borde);
+                & div{
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    & * {
+                        margin: var(--margen);
+                    }
+                }
+            }
+            & .radioButtonContainer{
+                width: 100%;
+                border: var(--borde);
+                & div{
+                    width: 100%;
+                    border:none;
+                }
+            }         
+        }
+
+        & #comentarios>div {
+            width: 100%;
+
+            & .panel-heading {
+                width: 100%;
+
+                & * {
+                    width: auto;
+                }
+            }
+
+            & .note-editing-area {
+                width: 100%;
+            }
+
+            & .note-statusbar {
+                width: 100%;
+
+                & .note-resizebar {
+                    width: 100%;
+                }
+
+            }
+        }
+   
+    }
+
+    form>div:last-child{
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        & .checkboxContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+    footer {
+        display: flex;
+        justify-content: space-between;
+    }
+    #arriba {
+        display: none;
+    }
+}
+
+/*LAPTOP*/
+@media (min-width: 1024px) {
+    body{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+
+        &>header{
+            align-self: stretch;
+            position: sticky;
+            top: 0;
+            width: auto;
+        }
+        &>*{
+            width: 100%;
+        }
+
+        &>nav {
+            flex-grow: 1;
+            padding: 0;
+            width: auto;
+            & ul{
+                justify-content: end;
+
+            }
+            & a{
+                padding: 0;
+                margin:0;
+            }
+            
+        }
+    }
+    main {
+        padding: var(--margen--grande);
+    }
+
+    article:first-of-type{
+        display: grid;
+        gap: var(--margen);
+        align-items: start;
+
+
+        grid-template-columns: 1fr  1fr 2fr 3fr;
+        grid-template-areas: 
+        "titulo-html       titulo-html          titulo-html         titulo-html"    
+        "parrafos-html     parrafos-html        parrafos-html       parrafos-html"
+        "enlaces-html      listas-html          tablas-html         tablas-html"
+        "enlaces-html      listas-html          tablas-html         tablas-html"
+        "formularios-html  formularios-html     multimedia-html     multimedia-html"
+        ;
+    
+        &>section{
+            width: 100% !important;
+        }
+        & h2{
+            grid-area: titulo-html;
+        }
+        & #parrafos{
+            grid-area: parrafos-html;
+        }
+        & #listas{
+            grid-area: listas-html;
+        }
+        & #enlaces{
+            grid-area: enlaces-html;
+        }
+        & #formularios{
+            grid-area: formularios-html;
+        }
+        & #multimedia{
+            grid-area: multimedia-html;
+        }
+        & #tablas{
+            grid-area: tablas-html;
+        }
+        & #citas{
+            grid-area: citas-html;
+        }
+    }
+
+    #parrafos{
+        display:grid;
+        grid-template-columns: repeat (3, 1fr);
+
+        &>*:not(h3), &>pre:first-of-type, &>pre:last-of-type{
+            width: 100%;
+        }
+        & h3{
+            grid-column-end: span 3;
+        }
+        & p:nth-of-type(2){
+            grid-row-start: 3;
+        }
+        & p:nth-of-type(3), & p:nth-of-type(4){
+            grid-row-end: span 2;
+        }
+        & pre:last-of-type{
+            grid-row-start: 4;
+            grid-column-start: 3;
+        }
+        & pre:first-of-type{
+            grid-column-end: 3;
+        }
+    }
+
+    #listas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        & h3{
+            grid-column-end: span 2;
+        }
+        & ol{
+            grid-row-start: 3;
+        }
+        & dl{
+            grid-row-end: span 2;
+        }
+    }
+
+    #enlaces {
+        width: 33.33%;
+    }
+
+    #formularios form{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1440px) {
+    main{
+        width: 90%;
+    }
+    aside{
+        width: auto;
+        & ul{
+            flex-direction: column;
+        }
+    }
+    article:first-of-type{
+        grid-template-columns: 9fr 5fr;
+        grid-template-areas: 
+        "titulo-html            titulo-html"    
+        "parrafos-html          parrafos-html"
+        "parrafos-html          parrafos-html"
+        "citas-html             citas-html"
+        "formularios-html       multimedia-html"
+        "formularios-html       multimedia-html"
+        "tablas-html            multimedia-html"
+        ;
+    }
+}
+
+@media (min-width: 2560px) {
+
+    article:first-of-type{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "titulo-html            titulo-html          titulo-html"   
+        "parrafos-html          parrafos-html        parrafos-html"
+        "parrafos-html          parrafos-html        parrafos-html"
+        "citas-html             listas-html          enlaces-html"
+        "formularios-html       multimedia-html      multimedia-html"
+        "tablas-html            multimedia-html      multimedia-html"
+        ;
+    }
+    #multimedia{
+        display: grid;
+        gap: var(--margen);
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "titulo-multimedia   titulo-multimedia"
+        "imagenes-html       videos-html"
+        "audios-html         audios-html"
+        "iframes-html        iframes-html"
+        ;
+
+        & h3{
+            grid-area: titulo-multimedia;
+        }
+        & img{
+            grid-area: imagenes-html;
+        }
+        & video{
+            grid-area: videos-html;
+        }
+        & audio{
+            grid-area: audios-html;
+        }
+        & #iframes{
+            grid-area: iframes-html;
+        }
+        
+    }
+    #iframes{
+        display: grid;
+        gap: var(--margen);
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "titulo-iframes   titulo-iframes"
+        "mapa-html        musica-html"
+        ;
+
+        & .proporcion:nth-of-type(1){
+            grid-area: mapa-html;
+        }
+        & .proporcion:nth-of-type(2){
+            grid-area: musica-html;
+        }
+    } 
 }
