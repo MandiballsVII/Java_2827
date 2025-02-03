@@ -618,8 +618,12 @@ form{
             padding: 0;
             width: auto;
             & ul{
+                margin-top: 10px;
+                align-items: center;
                 justify-content: end;
-
+                & li{
+                    margin: 0 var(--margen);
+                }
             }
             & a{
                 padding: 0;
@@ -638,13 +642,16 @@ form{
         align-items: start;
 
 
-        grid-template-columns: 1fr  1fr 2fr 3fr;
+        grid-template-columns: 1fr  1fr 2fr;
         grid-template-areas: 
-        "titulo-html       titulo-html          titulo-html         titulo-html"    
-        "parrafos-html     parrafos-html        parrafos-html       parrafos-html"
-        "enlaces-html      listas-html          tablas-html         tablas-html"
-        "enlaces-html      listas-html          tablas-html         tablas-html"
-        "formularios-html  formularios-html     multimedia-html     multimedia-html"
+        "titulo-html       titulo-html          titulo-html"    
+        "parrafos-html     parrafos-html        parrafos-html"
+        "parrafos-html     parrafos-html        parrafos-html"
+        "citas-html        listas-html          tablas-html"
+        "citas-html        listas-html          tablas-html"
+        "enlaces-html      enlaces-html         multimedia-html"
+        "formularios-html  formularios-html     multimedia-html"
+        "formularios-html  formularios-html     multimedia-html"
         ;
     
         &>section{
@@ -724,12 +731,16 @@ form{
     }
 }
 
+/*LAPTOP 2*/
 @media (min-width: 1440px) {
     main{
         width: 90%;
     }
     aside{
-        width: auto;
+        width: 10%;
+        padding: 0;
+        margin: 0;
+
         & ul{
             flex-direction: column;
         }
@@ -740,14 +751,18 @@ form{
         "titulo-html            titulo-html"    
         "parrafos-html          parrafos-html"
         "parrafos-html          parrafos-html"
+        "parrafos-html          parrafos-html"
+        "listas-html            enlaces-html"
         "citas-html             citas-html"
         "formularios-html       multimedia-html"
         "formularios-html       multimedia-html"
         "tablas-html            multimedia-html"
         ;
     }
+    
 }
 
+/*ESCRITORIO*/
 @media (min-width: 2560px) {
 
     article:first-of-type{
@@ -756,7 +771,7 @@ form{
         "titulo-html            titulo-html          titulo-html"   
         "parrafos-html          parrafos-html        parrafos-html"
         "parrafos-html          parrafos-html        parrafos-html"
-        "citas-html             listas-html          enlaces-html"
+        "listas-html            enlaces-html         citas-html"
         "formularios-html       multimedia-html      multimedia-html"
         "tablas-html            multimedia-html      multimedia-html"
         ;
@@ -800,6 +815,9 @@ form{
         "mapa-html        musica-html"
         ;
 
+        & h3{
+            grid-area: titulo-iframes;
+        }
         & .proporcion:nth-of-type(1){
             grid-area: mapa-html;
         }
