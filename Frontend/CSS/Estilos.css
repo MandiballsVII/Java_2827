@@ -590,6 +590,9 @@ form{
     footer {
         display: flex;
         justify-content: space-between;
+        & p{
+            margin-right: var(--margen);
+        }
     }
     #arriba {
         display: none;

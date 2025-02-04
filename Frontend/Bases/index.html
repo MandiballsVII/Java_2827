@@ -12,9 +12,10 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
     <link rel="stylesheet" href="../CSS/Estilos.css">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
 </head>
 
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 
 <body>
     <script>
@@ -134,35 +135,33 @@
                     <caption>Tabla de ejemplo</caption>
                     <thead>Tabla</thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Edad</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
                     </tr>
                     <tbody>
                         <tr>
-                            <th>1</th>
+                            <th scope="row">1</th>
                             <td>Ramón</td>
                             <td>Perez</td>
-                            <th>56</th>
+                            <td>56</td>
                         </tr>
                         <tr>
-                            <th>2</th>
+                            <th scope="row">2</th>
                             <td>Esther</td>
                             <td>Fernandez</td>
-                            <th>10</th>
+                            <td>10</td>
                         </tr>
                         <tr>
-                            <th>3</th>
+                            <th scope="row">3</th>
                             <td>Félix</td>
                             <td>Lopez</td>
-                            <th>23</th>
+                            <td>23</td>
                         </tr>
                         <tr>
-                            <th>TOTAL</th>
-                            <td></td>
-                            <td></td>
-                            <th>87</th>
+                            <th scope="row" colspan="3">TOTAL</th>
+                            <th scope="row">87</th>
                         </tr>
                     </tbody>
 
