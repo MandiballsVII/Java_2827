@@ -14,13 +14,18 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     -->
-    <link rel="icon" href="imgs/bootstrap.svg">
+    <link rel="icon" href="Img/bootstrap.svg">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="JS/bootstrap.bundle.js">
-    <link rel="stylesheet" href="Icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="CSS/summernote.min.css">
+
     <script src="JS/jquery-3.3.1.min.js"></script>
-    <script src="Trumbowyg/trumbowyg.min.js"></script>
-</head>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/summernote.js"></script>
+
+   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+    </head>
 
 
 <body>
@@ -398,6 +403,11 @@
             <a class="btn btn-light rounded-circle shadow" href="#"><i class="text-dark bi bi-arrow-up"></i></a>
         </div>
     </footer>
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote();
+        });
+    </script>
 
 </body>
 
