@@ -1,6 +1,60 @@
 'use strict';
 
-clases();
+///////////////ENREDANDO CON EL DOM//////////////////
+
+// document.body.style.background = 'red'; // make the background red
+
+// setTimeout(() => document.body.style.background = '', 3000); // return back
+
+// for (let node of document.body.childNodes) {
+//     console.log(node); // shows all nodes from the collection
+//   }
+
+// parent of <body> is <html>
+console.log( document.body.parentNode === document.documentElement ); // true
+
+// after <head> goes <body>
+console.log( document.head.nextSibling ); // HTMLBodyElement
+
+// before <body> goes <head>
+console.log( document.body.previousSibling ); // HTMLHeadElement
+
+console.log(document.body.firstElementChild.firstElementChild);
+console.log(document.body);
+console.log(document.body.children[0]);
+console.log(document.body.lastElementChild);
+
+let table = document.body.children[2].children[3].children[0];
+
+console.log(table);
+
+table.style.backgroundColor = 'green';
+
+for (let i = 0; i < table.rows.length; i++) {
+    let row = table.rows[i];
+    row.style.backgroundColor = 'blue';
+    row.cells[i].style.backgroundColor = 'red';
+  }
+
+  table.children[1].children[0].children[0].style.backgroundColor = 'purple';
+  table.children[0].children[0].children[2].style.color = 'white';
+  table.children[0].children[0].children[0].nextElementSibling.style.backgroundColor = 'orange';
+
+  document.getElementById('penultimo-elemento').style.backgroundColor = 'aquamarine';
+
+  let abajoIzquierda = document.getElementsByClassName('abajo-izquierda');
+  for(const elemento of abajoIzquierda){
+    elemento.style.backgroundColor = 'azure';
+  }
+
+  let ultimosHijos = document.querySelectorAll('tr > td:last-child, th:last-child');
+
+  for(const elemento of ultimosHijos){
+    elemento.style.color = 'deepskyblue';
+  }
+
+
+  ////////////////////FIN DE ENREDO CON DOM/////////////////
 
 function clases() {
     class Persona {
@@ -27,7 +81,7 @@ function prototipos() {
         this.apellidos = apellidos;
     }
 
-    Persona.prototype.datos = function() {
+    Persona.prototype.datos = function () {
         return `${this.nombre} ${this.apellidos}`;
     }
 
@@ -47,7 +101,7 @@ function prototipos() {
         return 'TROLEADO!!!';
     }
 
-    String.prototype.esJavier = function() {
+    String.prototype.esJavier = function () {
         return 'Javier' === this;
     }
 
