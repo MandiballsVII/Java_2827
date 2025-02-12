@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Productos</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/productos.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:fichas()">Productos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:admin()">Administración</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-3">
+        <section id="fichas">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-4">
+
+            </div>
+        </section>
+
+        <section id="admin">
+            <table class="table table-hover table-bordered table-striped">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+                <tfoot class="table-secondary">
+                    <tr>
+                        <td colspan="5">Total: 3 productos</td>
+                        <td>
+                            <a href="javascript:formulario()" class="btn btn-primary">Añadir</a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="formulario">
+            <form class="needs-validation" novalidate>
+                <div class="row mb-3">
+                    <label for="id" class="col-sm-2 col-form-label">Id</label>
+                    <div class="col-sm">
+                        <input type="number" readonly class="form-control" id="idproducto">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm">
+                        <input type="text" required minlength="3" class="form-control" id="nombre">
+                        <div class="invalid-feedback">
+                            El nombre es obligatorio y debe tener al menos 3 caracteres
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="precio" class="col-sm-2 col-form-label">Precio</label>
+                    <div class="col-sm">
+                        <input type="number" step=".01" required min="0" class="form-control" id="precio">
+                        <div class="invalid-feedback">
+                            El precio es obligatorio y debe ser mayor que 0
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="descripcion" class="col-sm-2 col-form-label">Descripción</label>
+                    <div class="col-sm">
+                        <textarea class="form-control" id="descripcion"></textarea>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="stock" class="col-sm-2 col-form-label">Stock</label>
+                    <div class="col-sm">
+                        <input type="number" required min="0" class="form-control" id="stock">
+                        <div class="invalid-feedback">
+                            El stock es obligatorio y debe ser mayor que 0
+                        </div>
+                    </div>
+                </div>
+    
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+    
+            <script>
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (() => {
+                    'use strict'
+    
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    const forms = document.querySelectorAll('.needs-validation')
+    
+                    // Loop over them and prevent submission
+                    Array.from(forms).forEach(form => {
+                        form.addEventListener('submit', event => {
+                            if (!form.checkValidity()) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
+    
+                            form.classList.add('was-validated')
+                        }, false)
+                    })
+                })()
+            </script>
+        </section>
+    </main>
+
+    <footer class="p-2 text-bg-dark">
+        <p>&copy;2025 Javier Lete</p>
+    </footer>
+</body>
+
+</html>
