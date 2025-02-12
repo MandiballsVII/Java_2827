@@ -1,6 +1,6 @@
 'use strict';
 
-const URL_PRODUCTOS = 'json/productos.json';
+const URL_PRODUCTOS = 'http://127.0.0.1:3000/Productos';
 
 addEventListener('DOMContentLoaded', async () => {
     fichas();
@@ -12,7 +12,7 @@ function ver(seccion) {
 }
 
 async function fichas() {
-    const respuesta = await fetch('json/productos.json');
+    const respuesta = await fetch(URL_PRODUCTOS);
 
     console.log(respuesta);
 
