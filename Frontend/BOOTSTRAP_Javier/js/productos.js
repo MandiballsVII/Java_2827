@@ -1,6 +1,6 @@
 'use strict';
 
-const URL_PRODUCTOS = 'http://127.0.0.1:3000/Productos/';
+const URL_PRODUCTOS = 'http://localhost:3000/Productos/';
 
 addEventListener('DOMContentLoaded', async () => {
     fichas();
@@ -108,4 +108,31 @@ async function formulario(id) {
     }
 
     ver('formulario');
+}
+
+async function guardar() {
+    const id = document.querySelector("#idproducto").value;
+    const nombre = document.querySelector("#nombre").value;
+    const descripcion = document.querySelector("#descripcion").value;
+    const precio = document.querySelector("#precio").value;
+    const stock = document.querySelector("#stock").value;
+
+    const jsonParaEnviar = `{
+      "id": "${id}",
+      "nombre": "${nombre}",
+      "descripcion": "${descripcion}",
+      "precio": ${precio},
+      "stock": ${stock}
+  
+    }`
+    console.log(jsonParaEnviar);
+    const respuesta = await fetch(URL_PRODUCTOS + id, {
+        method : 'PUT',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(jsonParaEnviar)
+      
+    });
+    console.log(respuesta);
+    const productoActualizado = await respuesta.json();
+    console.log(productoActualizado);
 }
