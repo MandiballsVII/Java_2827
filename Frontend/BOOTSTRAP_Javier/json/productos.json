@@ -10,9 +10,9 @@
     {
       "id": 2,
       "nombre": "Producto 2",
-      "descripcion": "Este es el producto 12, un producto guapo",
-      "precio": 22.99,
-      "stock": 25
+      "descripcion": "Este es el producto 12, un producto guapo, pero guapo guapo.",
+      "precio": "22.99",
+      "stock": "255"
     },
     {
       "id": 3,
@@ -24,9 +24,23 @@
     {
       "id": 4,
       "nombre": "Producto 12",
-      "descripcion": "Este es el producto 12, un producto no tan guapo",
-      "precio": 22.99,
-      "stock": 25
+      "descripcion": "Este es el producto 12, un producto no tan guapo pero muy barato.",
+      "precio": "22.99",
+      "stock": "25"
+    },
+    {
+      "nombre": "Producto nuevo",
+      "descripcion": "Este es un producto nuevo.",
+      "precio": "12",
+      "stock": "34",
+      "id": 5
+    },
+    {
+      "nombre": "trehej",
+      "descripcion": "gregr",
+      "precio": "43",
+      "stock": "43",
+      "id": 6
     }
   ]
 }

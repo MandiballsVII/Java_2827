@@ -79,10 +79,11 @@ async function admin() {
                 <td>${producto.stock}</td>
                 <td>
                     <a href="javascript:formulario(${producto.id})" class="btn btn-primary">Editar</a>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <a href="javascript:eliminar(${producto.id})" class="btn btn-danger">Eliminar</a>
                 </td>
             `;
-
+        const totalProductos = document.querySelector('tfoot td:nth-child(2)');
+        totalProductos.textContent = productos.length;
         tbody.appendChild(tr);
     });
 
@@ -91,8 +92,8 @@ async function admin() {
 
 async function formulario(id) {
     const form = document.querySelector('#formulario form');
-    
-    if(id) {
+
+    if (id) {
         const respuesta = await fetch(URL_PRODUCTOS + id);
         const producto = await respuesta.json();
 
@@ -110,29 +111,65 @@ async function formulario(id) {
     ver('formulario');
 }
 
-async function guardar() {
-    const id = document.querySelector("#idproducto").value;
-    const nombre = document.querySelector("#nombre").value;
-    const descripcion = document.querySelector("#descripcion").value;
-    const precio = document.querySelector("#precio").value;
-    const stock = document.querySelector("#stock").value;
+async function crearNuevo() {
+    const producto = {
+        nombre: document.querySelector("#nombre").value,
+        descripcion: document.querySelector("#descripcion").value,
+        precio: document.querySelector("#precio").value,
+        stock: document.querySelector("#stock").value
+    }
 
-    const jsonParaEnviar = `{
-      "id": "${id}",
-      "nombre": "${nombre}",
-      "descripcion": "${descripcion}",
-      "precio": ${precio},
-      "stock": ${stock}
-  
-    }`
-    console.log(jsonParaEnviar);
-    const respuesta = await fetch(URL_PRODUCTOS + id, {
-        method : 'PUT',
+    const respuesta = await fetch(URL_PRODUCTOS, {
+        method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(jsonParaEnviar)
-      
+        body: JSON.stringify(producto)
     });
-    console.log(respuesta);
-    const productoActualizado = await respuesta.json();
-    console.log(productoActualizado);
+    const productoCreado = await respuesta.json(); //Por si lo necesitamos
+    if (respuesta.ok) {
+        admin();
+    } else {
+        alert('Error');
+    }
+}
+
+async function guardar() {
+
+    if (!document.querySelector("#idproducto").value) {
+        crearNuevo();
+    } else {
+        const producto = {
+            id: document.querySelector("#idproducto").value,
+            nombre: document.querySelector("#nombre").value,
+            descripcion: document.querySelector("#descripcion").value,
+            precio: document.querySelector("#precio").value,
+            stock: document.querySelector("#stock").value
+        }
+
+        const respuesta = await fetch(URL_PRODUCTOS + id, {
+            method: 'PUT',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(producto)
+
+        });
+        const productoActualizado = await respuesta.json(); //Por si lo necesitamos
+        if (respuesta.ok) {
+            admin();
+        } else {
+            alert('Error');
+        }
+    }
+
+
+}
+
+async function eliminar(id) {
+    const respuesta = await fetch(URL_PRODUCTOS + id, {
+        method: 'DELETE'
+    });
+    const productoEliminado = await respuesta.json(); //Por si lo necesitamos
+    if (respuesta.ok) {
+        admin();
+    } else {
+        alert('Error');
+    }
 }
