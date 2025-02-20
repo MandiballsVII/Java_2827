@@ -4,6 +4,7 @@ import Profile from "./Profile";
 import ListaConTitulo from "./Lista";
 import Bio from "./Bio";
 import TodoList from "./Todo";
+import AvatarProfile from "./Avatar";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Imagen />
       <Bio />
       <TodoList />
+      <AvatarProfile />
     </>
   );
 }
