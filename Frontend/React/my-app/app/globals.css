@@ -35,6 +35,13 @@ a {
   text-decoration: none;
 }
 
+.card {
+  background-color: var(--background);
+  color: var(--foreground);
+  border: #0a0a0a 1px solid;
+}
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -1,7 +1,7 @@
 import getimageurl from './utils.js';
 import PropTypes from 'prop-types';
 
-function Avatar({person, size}){
+export function Avatar({person, size}){
     return(
         <img
         className="avatar"
@@ -20,7 +20,7 @@ Avatar.propTypes = {
     size: PropTypes.number.isRequired
 };
 
-export default function AvatarProfile() {
+export default function AvatarProfiles() {
     return (
       <div>
         <Avatar person = {{name: 'Katsuko Saruhashi', imageID: 'YfeOqp2'}}
